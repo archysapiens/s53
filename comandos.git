@@ -1,0 +1,7 @@
+ git checkout -b feb20210215
+  git status
+  git add calcula_semana_inicial.ksh
+  git commit -m "actualizacion"
+  git pust origen master
+  git pust origin feb20210215
+

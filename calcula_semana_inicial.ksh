@@ -3,6 +3,7 @@ while true
 do
         if [ "$ANIO" -le 2030 ]
         then
+		ANIO_MAIN=$ANIO
                 #echo $ANIO
                 DIA=1
                 while true
@@ -14,7 +15,8 @@ do
 
 			if [ "$U" -eq 1 ] && [ "$SEMANA" = "01" ]
 			then 
-				echo "Es el Primer dia de la semana >>" $FECHA " SEMANA>"$SEMANA" DIA >"$U
+				#echo "Es el Primer dia de la semana >>" $FECHA " SEMANA>"$SEMANA" DIA >"$U
+				echo "$ANIO =>>"$FECHA " SEMANA =>>"$SEMANA" DIA =>>"$U
                 		DIA=0
 				break
 			else
@@ -36,7 +38,8 @@ do
 
 						if [ "$DIA_ANT" -eq 8 ] || [ "$UU" -eq 1 ]
 						then
-							echo "       Encontre  el primer dia de la semana FECHA >>"$NUEVA_FECHA" SEMANA >>"$SEMANA_NUEVA" DIA>>"$UU
+							#echo "       Encontre  el primer dia de la semana FECHA >>"$NUEVA_FECHA" SEMANA >>"$SEMANA_NUEVA" DIA>>"$UU
+							echo "$ANIO_MAIN =>>"$NUEVA_FECHA " SEMANA =>>"$SEMANA_NUEVA" DIA =>>"$UU
 							DIA=0
 							break
 						fi
@@ -61,6 +64,7 @@ do
 
                         if [ "$DIA" -ge 10 ]
                         then
+				echo "Break DIA >>" $DIA
                                 break
                         fi
 

@@ -1,7 +1,7 @@
-ANIO=2000
+ANIO=1900
 while true
 do
-        if [ "$ANIO" -le 2030 ]
+        if [ "$ANIO" -le 2050 ]
         then
 		ANIO_MAIN=$ANIO
                 #echo $ANIO
@@ -11,12 +11,13 @@ do
                         FECHA="$ANIO-01-0"$DIA
                         SEMANA=`date -d $FECHA +"%V"`
                         U=`date -d $FECHA +"%u"`
+			U_ORI=$U
 			echo "Fecha a analizar  >>" $FECHA " SEMANA>"$SEMANA" DIA >"$U
 
 			if [ "$U" -eq 1 ] && [ "$SEMANA" = "01" ]
 			then 
 				#echo "Es el Primer dia de la semana >>" $FECHA " SEMANA>"$SEMANA" DIA >"$U
-				echo "$ANIO =>>"$FECHA " SEMANA =>>"$SEMANA" DIA =>>"$U
+				echo "$ANIO=>> $U_ORI =>>"$FECHA " SEMANA =>>"$SEMANA" DIA =>>"$U
                 		DIA=0
 				break
 			else
@@ -39,7 +40,7 @@ do
 						if [ "$DIA_ANT" -eq 8 ] || [ "$UU" -eq 1 ]
 						then
 							#echo "       Encontre  el primer dia de la semana FECHA >>"$NUEVA_FECHA" SEMANA >>"$SEMANA_NUEVA" DIA>>"$UU
-							echo "$ANIO_MAIN =>>"$NUEVA_FECHA " SEMANA =>>"$SEMANA_NUEVA" DIA =>>"$UU
+							echo "$ANIO_MAIN=>> $U_ORI =>>"$NUEVA_FECHA " SEMANA =>>"$SEMANA_NUEVA" DIA =>>"$UU
 							DIA=0
 							break
 						fi
